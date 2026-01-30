@@ -1,0 +1,164 @@
+.hero {
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    position: relative;
+
+    // Animated Gradient Background
+    .gradientBackground {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+
+        .gradientCircle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+        }
+
+        .circle1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #8a6cff, #6c4dff);
+            top: 20%;
+            left: 30%;
+            animation: float1 10s ease-in-out infinite;
+        }
+
+        .circle2,
+        .circle3 {
+            display: none;
+        }
+    }
+
+    @keyframes float1 {
+        0%, 100% {
+            transform: translate(0, 0);
+        }
+        25% {
+            transform: translate(200px, -100px);
+        }
+        50% {
+            transform: translate(100px, 250px);
+        }
+        75% {
+            transform: translate(-150px, 50px);
+        }
+    }
+
+    .wrapper {
+        max-width: 1300px;
+        height: 100%;
+        margin: auto;
+        padding: 0 40px;
+        position: relative;
+        z-index: 1;
+
+        .textContainer {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 22px;
+
+            h2 {
+                font-size: 22px;
+                color: #8a6cff;
+                letter-spacing: 5px;
+                font-weight: 500;
+            }
+
+            h1 {
+                font-size: 52px;
+                color: white;
+                line-height: 1.2;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 16px;
+                color: #c5c5c5;
+                line-height: 1.6;
+            }
+
+            .buttons {
+                display: flex;
+                gap: 14px;
+                margin-top: 12px;
+
+                a {
+                    padding: 10px 22px;
+                    border-radius: 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    cursor: pointer;
+                    transition: background-color 0.25s ease, color 0.25s ease;
+                    border: 1px solid white;
+                    display: inline-block;
+                }
+
+                .btnPrimary {
+                    background: transparent;
+                    color: white;
+                    z-index: 99999999;
+
+                    &:hover {
+                        background: white;
+                    }
+                }
+
+                .btnSecondary {
+                    background: white;
+                    color: #0c0c1d;
+                    z-index: 99999999;
+
+                    &:hover {
+                        background: transparent;
+                    }
+                }
+            }
+
+            a {
+                display: inline-block;
+                margin-top: 12px;
+
+                img {
+                    width: 30px;
+                    opacity: 0.8;
+                    cursor: pointer;
+                    z-index: 9999999;
+                }
+            }
+        }
+    }
+
+    .imageContainer {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 60px;
+        z-index: 1;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .slidingTextContainer {
+        position: absolute;
+        font-size: 50vh;
+        bottom: -80px;
+        font-weight: 900;
+        white-space: nowrap;
+        color: #ffffff08;
+        z-index: 0;
+    }
+}
